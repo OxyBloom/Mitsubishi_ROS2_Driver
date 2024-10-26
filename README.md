@@ -22,9 +22,16 @@ The next step is to type in the IP of your robot and your host IP. For that you 
 <br />
 All done, now we can start our docker container. **Don't forget to run the Docker-Desktop app. in the background.** <br />
 Now, you can either use a docker extension, the provided PowerShell script (**start.ps1**) or type in this command in the terminal: 
+
+**Without GPU support**
 ```js
 docker compose up -d
 ```
+**NVIDIA GPU support**
+```
+docker-compose -f docker-compose.yml -f docker-compose.gpu.yml up -d
+```
+
 Dockers is now starting to build the containers, this may take approximately 10 to 20 minutes. Your docker container should now be running. The next step is to open up the UI from our container. <br />
 Open this [Page with NoVNC](http://localhost:8080/vnc.html?autoconnect=1&resize=scale) and you should see a empty linux UI.
 Next, we open up the bash inside the container. Again, you have a couple of options to do this, e.g. try the PowerShell script (**attach.ps1**) or type in this command:
